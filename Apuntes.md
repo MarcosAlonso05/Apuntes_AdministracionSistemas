@@ -207,7 +207,8 @@ Desconecta el cable de red o desactiva el adaptador. Inicia sesión con las cred
 
 ---
 
-## DNS {#seccion3}
+<a id="seccion3"></a>
+## DNS
 
 *Puerto 53*
 El DNS es un systema que traduce nombres de dominio a sus direcciones IP correspondientes y viceversa. Su función es hacer posible la navegación por nombres en lugar de por numeros.
@@ -238,7 +239,8 @@ Se puede hacer modificando el archivo hosts o manipulando un servidor DNS compro
 
 ---
 
-## DHCP {#seccion4}
+<a id="seccion4"></a>
+## DHCP
 
 *Puertos utilizados: Servidor -> UDP 67 / Cliente -> UDP 68*
 El DHCP es un protocolo que asigna automaticamente direcciones IP y otra información de configuración de red a los dispositivos.
@@ -308,7 +310,8 @@ Esto se conoce como DNS dinámico (DDNS).
 
 ---
 
-## PROXY {#seccion5}
+<a id="seccion5"></a>
+## PROXY
 
 Un servidor proxy es un intermediario entre un cliente y un recurso al que quiero acceder. Su función principal es canalizar, filtrar o gestionar las solicitudes que pasan entre los dos extremos.
 
@@ -369,7 +372,8 @@ sa una red de muchos proxys encadenados que van cambiando a cada rato (la base d
 
 ---
 
-## SERVIDOR WEB {#seccion6}
+<a id="seccion6"></a>
+## SERVIDOR WEB
 
 Un servidor web es un software encargado de recibir peticiones de los clientes (navegadores) y responder con páginas web. Su función principal es almacenar, procesar y entregar contenido web.
 
@@ -408,7 +412,8 @@ En HTTPS usa un certificado digital (SSL/TLS) para encriptar los datos, de modo 
 
 ---
 
-## CERTIFICADOS {#seccion7}
+<a id="seccion7"></a>
+## CERTIFICADOS
 
 Un certificado SSL es un archivo que contiene información que identifica a un servidor web y permite cifrar las comunicaciones.
 Estos los emite una CA (Autoridad Certificadora), esta es una entidad de confianza que valida la identidad del servidor o la empresa antes de emitir el certificado.
@@ -464,7 +469,8 @@ ROOT e INTERMEDIATE son los comunes y el certificado maquina es individual de ca
 
 ---
 
-## *PREGUNTAS TIPO EXAMEN* {#seccion8}
+<a id="seccion8"></a>
+## *PREGUNTAS TIPO EXAMEN*
 
 **Virtualización:**
 
@@ -528,4 +534,5 @@ https puerto: 443 y encriptado mediante un certificado SSL.
 
 *-¿Si tengo maquina encargada de generar certificados que parte de la estructura sera diferente en mi servidor web y en mis servidor proxi?*
 El certificado maquina(final) porque es propio de cada maquina.
+
 
