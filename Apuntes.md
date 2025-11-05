@@ -15,7 +15,8 @@
 
 ---
 
-## VIRTUALIZACIÓN {#seccion1}
+<a id="seccion1"></a>
+## VIRTUALIZACIÓN
 
 Crear una versión virtual de un recurso tecnológico. Las ventajas claves de esto son:
 
@@ -90,7 +91,8 @@ Importante, la snapshot se debe hacer con la maquina apagada, ya que puede haber
 
 ---
 
-## DIRECTORIO ACTIVO {#seccion2}
+<a id="seccion2"></a>
+## DIRECTORIO ACTIVO
 
 El Directorio Activo (AD) es un servicio que permite gestionar usuarios, equipos, grupos y políticas de seguridad de una red de forma centralizada.
 Cuando instalas un servidor de directorio activo necesitas tambien un servido dns, ya que cuando un cliente quiere asociarse al dominio quiere acceder con nombre no por IP.
@@ -526,3 +528,4 @@ https puerto: 443 y encriptado mediante un certificado SSL.
 
 *-¿Si tengo maquina encargada de generar certificados que parte de la estructura sera diferente en mi servidor web y en mis servidor proxi?*
 El certificado maquina(final) porque es propio de cada maquina.
+
