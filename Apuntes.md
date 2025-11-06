@@ -275,7 +275,7 @@ Su función principal es automatizar el asignar direcciones, en lugar de que un 
 * Estatica por MAC: IP se asigna desde el servidor DHCP, pero está reservada para una dirección MAC concreta.
   El cliente siempre recibe la misma IP, porque el servidor la tiene guardada para él.
   Si mueves el equipo a otra red con otro servidor DHCP, seguirá funcionando, solo que recibirá una IP del nuevo rango.
-* Dinamica por MAC: El servidor sigue usando DHCP, pero identifica al cliente por su MAC. Si la máquina se conecta dentro de la misma red recibe una IP estaticamente.
+* Dinamica por MAC: El servidor sigue usando DHCP, pero identifica al cliente por su MAC. Si la máquina se conecta dentro de la misma red recibe una IP dinamicamente.
  Asi puede conectarse desde otro lugar sin tener problemas.
   Ventaja: permite tener una IP dentro de la red corporativa para localizar dispositivos en especifico, pero adaptable fuera de ella.
 
@@ -534,6 +534,7 @@ https puerto: 443 y encriptado mediante un certificado SSL.
 
 *-¿Si tengo maquina encargada de generar certificados que parte de la estructura sera diferente en mi servidor web y en mis servidor proxi?*
 El certificado maquina(final) porque es propio de cada maquina.
+
 
 
 
