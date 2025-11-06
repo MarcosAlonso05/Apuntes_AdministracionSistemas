@@ -41,7 +41,7 @@ El rendimiento de las maquinas depende entonces de:
 * Cantidad de RAM disponibles.
 * Numero de nucleos del procesador.
 * La velocidad de disco.
-* LA carga simultanea de las maquinas.  
+* La carga simultanea de las maquinas.  
 
 Esto lleva a otro punto importante. **Cúantas maquinas puedo crear vs. cuantas puedo tener corriendo**.
 
@@ -60,11 +60,11 @@ No se puede saber ya que desconocemos lo que ocupa el sofware de virtualización
 
 &#8203;
 **Modos de la targeta de red**
-La targeta de res virtual puedo operar en varios modos según el nivel de aislamiento o conexión:
+La targeta de red virtual puedo operar en varios modos según el nivel de aislamiento o conexión:
 
-* Bidged: Conecta la VM directamente a la red física. Tiene su propia IP en la res local.
+* Bidged: Conecta la VM directamente a la red física. Tiene su propia IP en la red local.
 * NAT: La VM comparte la conexión del host, saliendo a Internet a traves de la IP del anfitrión.
-* Host-Only: La VM solo se con el host (no acceso a internet).
+* Host-Only: La VM solo se comunica con el host (no acceso a internet).
 * Internal / Private: Solo se comunica con otras VMs del mismo entorno virtual.
 
 &#8203;
@@ -275,9 +275,9 @@ Su función principal es automatizar el asignar direcciones, en lugar de que un 
 * Estatica por MAC: IP se asigna desde el servidor DHCP, pero está reservada para una dirección MAC concreta.
   El cliente siempre recibe la misma IP, porque el servidor la tiene guardada para él.
   Si mueves el equipo a otra red con otro servidor DHCP, seguirá funcionando, solo que recibirá una IP del nuevo rango.
-* Dinamica por MAC: El servidor sigue usando DHCP, pero identifica al cliente por su MAC. Si la máquina se conecta dentro de la misma red recibe siempre la misma IP.
-  Asi si se conecta desde otro lugar , obtiene una IP diferente del DHCP local.
-  Ventaja: permite tener una IP “fija” dentro de la red corporativa para localizar dispositivos en especifico, pero adaptable fuera de ella.
+* Dinamica por MAC: El servidor sigue usando DHCP, pero identifica al cliente por su MAC. Si la máquina se conecta dentro de la misma red recibe una IP estaticamente.
+ Asi puede conectarse desde otro lugar sin tener problemas.
+  Ventaja: permite tener una IP dentro de la red corporativa para localizar dispositivos en especifico, pero adaptable fuera de ella.
 
 DHCP se usa para los clientes, para los servidores se usan direcciones estaticas configuradas manualmente.
 
@@ -534,5 +534,6 @@ https puerto: 443 y encriptado mediante un certificado SSL.
 
 *-¿Si tengo maquina encargada de generar certificados que parte de la estructura sera diferente en mi servidor web y en mis servidor proxi?*
 El certificado maquina(final) porque es propio de cada maquina.
+
 
 
