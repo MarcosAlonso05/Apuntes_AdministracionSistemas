@@ -50,7 +50,10 @@ El file server depende totalmente de sus discos duros, hay diferentes formas en 
     |1|1|0|
     |0|0|0|
 
-En las empresas se suele usar una combinacion de los diferentes RAIDS para maximizar el espacio pero manteniendo la seguridad.
+En las empresas se suele usar una combinacion de los diferentes RAIDS para maximizar el espacio pero manteniendo la seguridad. Todo dependera de los requisitos de la empresa, el dinero dispuesto a gastar y la seguridad que se requiera.
+
+![ej Raids](recursos/raids.png)
+
 ---
 
 <a id="seccion2"></a>
@@ -93,4 +96,5 @@ El Servidor Radius es:
 1. **Medio De Acceso:**
 2. **Condiciones:**
 3. **Politicas:**
+
 
