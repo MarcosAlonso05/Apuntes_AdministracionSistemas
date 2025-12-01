@@ -50,6 +50,7 @@ El file server depende totalmente de sus discos duros, hay diferentes formas en 
     |1|1|0|
     |0|0|0|
 
+En las empresas se suele usar una combinacion de los diferentes RAIDS para maximizar el espacio pero manteniendo la seguridad.
 ---
 
 <a id="seccion2"></a>
@@ -92,3 +93,4 @@ El Servidor Radius es:
 1. **Medio De Acceso:**
 2. **Condiciones:**
 3. **Politicas:**
+
