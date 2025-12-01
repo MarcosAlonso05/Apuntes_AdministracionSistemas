@@ -84,7 +84,7 @@ Otra función es tener una red wifi de mi conpañia montada en una dmz del firew
 Entonces aqui es donde entra el RADIUS, que se encarga de validar hasta donde puede llegar un usuario. Bloquea y no permite el paso a zonas indevidas.
 Aunque fisicamente es el mismo cable y la misma antena, pero lógicamente son dos mundos separados.
 
-### -FUNCIONAMIENTO
+### -FUNCIONAMIENTO DEL RADIUS
 
 El Servidor Radius es:
 -Sistema de control a red, áctúa como punto de decisión para permitir o denegar el acceso a la red basándose en políticas predefinidas.
@@ -96,5 +96,6 @@ El Servidor Radius es:
 1. **Medio De Acceso:**
 2. **Condiciones:**
 3. **Politicas:**
+
 
 
