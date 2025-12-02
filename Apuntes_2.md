@@ -91,11 +91,22 @@ El Servidor Radius es:
 -Proxy (RADIUS Proxy), Capacidad de retransmitir las peticiones de autenticación a otros servidores RADIUS externos.
 -Autentificador, Verifica las credenciales del usuario contra una base de datos externa o local.
 
+- Radius Externo:
+
+```
+wifi
+|
+Radiua  <--> Relacion de confianza <┐
+|                                   |         
+Firewall --- Red interna --- Directorio activo 
+```
+
 ### -VALIDACIONES
 
 1. **Medio De Acceso:**
 2. **Condiciones:**
 3. **Politicas:**
+
 
 
 
