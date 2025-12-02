@@ -91,7 +91,7 @@ El Servidor Radius es:
 -Proxy (RADIUS Proxy), Capacidad de retransmitir las peticiones de autenticación a otros servidores RADIUS externos.
 -Autentificador, Verifica las credenciales del usuario contra una base de datos externa o local.
 
-- Radius Externo:
+**-Radius Externo:**
 
 ```
 wifi
@@ -105,17 +105,34 @@ Supongamos que el Directorio activo (AD) tiene la IP .100 y el Servidor Radius t
 Pero esto no es suficiente ya que alguien puedo suplantar la identidad de el servidor Radius para engañar al AD por lo que necesito una capa de seguridad. Es por eso que ademas cada uno crea un Certificado y lo instalo en el otro. 
 
 El servidor Radius puede validar usuarios contra diferentes bases de datos para separar tráficos, pudiendo utilizar su base de datos local o el AD. Sigue un orden secuencial para decidir qué hacer con una petición:
-1. Base de Datos Local, primero en su propia lista interna de usuarios. Si es un usuario "invitado", Radius autoriza salida directa a Internet, sin acceso a servidores. El proceso termina aquí.
-2. Directorio Activo, si el usuario no está en la base local, el Radius actúa como Proxy y consulta al Domain Controller. Si el usuario es un "empleado" El AD verifica las credenciales si son correctas, devuelve "OK". y autoriza el acceso a la red interna.
-Por eso el Radius sirve de validador ya que puedo acceder al dominio desde el Radius sin necesidad de acceder al AD directamente.
 
-- Radius Interno:
+1. Base de Datos Local, primero en su propia lista interna de usuarios. Si es un usuario "invitado", Radius autoriza salida directa a Internet, sin acceso a servidores. El proceso termina aquí.
+2. Directorio Activo, si el usuario no está en la base local, el Radius actúa como Proxy y consulta al Domain Controller. Si el usuario es un "empleado" El AD verifica las credenciales si son correctas, devuelve "OK" y autoriza el acceso a la red interna.
+
+Por eso el Radius sirve de validador ya que puedo acceder al dominio desde el Radius sin necesidad de acceder al AD directamente. Asi no tengo que preocuparme de las personas que no quiero que accedan a mi red interna pero que tienen que acceder a internet.
+
+**-Radius Interno:**
+
+En una red empresarial se encuentran múltiples tipos de dispositivos de infraestructura (Servicios). Routers, Switches, Firewalls, Cámaras IP, Impresoras, Servidores Multimedia, Bases de Datos...
+Para gestionar todos estos dispositivos tendria que crear individualmente cada cuenta en cada dispositivo y cualquier modificación tendria que ir haciendola uno a uno, esto no es nada efectivo.
+La solución es el servidor Radius ya que centraliza la gestión. En lugar de loguearse contra la base de datos interna del switch, el switch le pregunta al Radius. 
+
+Ventajas: Solo gestionas las cuentas en un sitio (el Active Directory o la base local del Radius). Si borras al usuario del AD, pierde acceso instantáneamente a todos los routers, switches y cámaras. Permite "hablar" el idioma específico de cada marca. Permite enviar atributos específicos para decirle al dispositivo qué nivel de permisos tiene el usuario y el Radius traduce al comando técnico específico que cada marca necesita entender.
+Lo tengo que configurar una primera vez pero luego ya se mantiene. Al igual que con el externo se debe establecer una relación de confianza con el AD.
+
+ - Flujo de Administración:
+   1. Solicitud: El administrador abre una consola (SSH o Web) contra un Switch e introduce su usuario/contraseña de dominio.
+   2. Reenvío: El Switch (Cliente Radius) no valida nada. Empaqueta las credenciales y las manda al Servidor Radius.
+   3. Consulta: El Radius mira en base de datos (local o AD).
+   4. Respuesta (Authorization): Si las credenciales estan bien se manda un ok, el Radius mira sus políticas y manda el atributo de privilegio.
+   5. Acceso: El Switch recibe el "Access-Accept" y te deja entrar con los privilegios dados.
 
 ### -VALIDACIONES
 
 1. **Medio De Acceso:**
 2. **Condiciones:**
 3. **Politicas:**
+
 
 
 
