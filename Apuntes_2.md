@@ -121,17 +121,18 @@ Ventajas: Solo gestionas las cuentas en un sitio (el Active Directory o la base 
 Lo tengo que configurar una primera vez pero luego ya se mantiene. Al igual que con el externo se debe establecer una relación de confianza con el AD.
 
  - Flujo de Administración:
-   1. Solicitud: El administrador abre una consola (SSH o Web) contra un Switch e introduce su usuario/contraseña de dominio.
-   2. Reenvío: El Switch (Cliente Radius) no valida nada. Empaqueta las credenciales y las manda al Servidor Radius.
-   3. Consulta: El Radius mira en base de datos (local o AD).
-   4. Respuesta (Authorization): Si las credenciales estan bien se manda un ok, el Radius mira sus políticas y manda el atributo de privilegio.
-   5. Acceso: El Switch recibe el "Access-Accept" y te deja entrar con los privilegios dados.
+1. Solicitud: El administrador abre una consola (SSH o Web) contra un Switch e introduce su usuario/contraseña de dominio.
+2. Reenvío: El Switch (Cliente Radius) no valida nada. Empaqueta las credenciales y las manda al Servidor Radius.
+3. Consulta: El Radius mira en base de datos (local o AD).
+4. Respuesta (Authorization): Si las credenciales estan bien se manda un ok, el Radius mira sus políticas y manda el atributo de privilegio.
+5. Acceso: El Switch recibe el "Access-Accept" y te deja entrar con los privilegios dados.
 
 ### -VALIDACIONES
 
 1. **Medio De Acceso:**
 2. **Condiciones:**
 3. **Politicas:**
+
 
 
 
