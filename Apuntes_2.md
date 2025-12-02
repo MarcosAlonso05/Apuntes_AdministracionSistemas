@@ -103,11 +103,20 @@ Firewall --- Red interna --- Directorio activo
 El Radius puede actuar de intermediario entre las maquinas que vengan del wifi y mi servidor de Direcctorio Activo, estos estan conectados entre si mediante una relación de confianza. Funcionamiento:
 Supongamos que el Directorio activo (AD) tiene la IP .100 y el Servidor Radius tiene la IP .200, entonces al AD se le indica la IP del Radius y vicebersa ademas que cada uno indica una password.
 Pero esto no es suficiente ya que alguien puedo suplantar la identidad de el servidor Radius para engañar al AD por lo que necesito una capa de seguridad. Es por eso que ademas cada uno crea un Certificado y lo instalo en el otro. 
+
+El servidor Radius puede validar usuarios contra diferentes bases de datos para separar tráficos, pudiendo utilizar su base de datos local o el AD. Sigue un orden secuencial para decidir qué hacer con una petición:
+1. Base de Datos Local, primero en su propia lista interna de usuarios. Si es un usuario "invitado", Radius autoriza salida directa a Internet, sin acceso a servidores. El proceso termina aquí.
+2. Directorio Activo, si el usuario no está en la base local, el Radius actúa como Proxy y consulta al Domain Controller. Si el usuario es un "empleado" El AD verifica las credenciales si son correctas, devuelve "OK". y autoriza el acceso a la red interna.
+Por eso el Radius sirve de validador ya que puedo acceder al dominio desde el Radius sin necesidad de acceder al AD directamente.
+
+- Radius Interno:
+
 ### -VALIDACIONES
 
 1. **Medio De Acceso:**
 2. **Condiciones:**
 3. **Politicas:**
+
 
 
 
