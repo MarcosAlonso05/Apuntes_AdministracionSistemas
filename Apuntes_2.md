@@ -79,7 +79,7 @@ RED INTERNA ---- Firewall ---- INTERNET
 Sale del Firewall, uno de sus usos es poner en ella el frontend de los servidores para que todo el trafico pase por el firewall y cualquiera que acceda desde fuera solo pueda hablar con esa zona.
 Así si el servidor que está aislado en la DMZ es atacado, el hacker se queda "encerrado" allí. El Firewall bloquea el tráfico desde la DMZ hacia la Red Interna protegiendola.
 Tambien podemos tener en ella una red wifi de invitados. Ya que conectar un "invitado" a la red interna es peligroso, al crear una red wifi aislada en la DMZ gano que su trafico no pase por mi red interna ademas de estar protegido por el firewall.
-Otra función es tener una red wifi de mi conpañia montada en una dmz del firewall dedicada a los telefonos de empleados. Ya que los portatiles se pueden tener controlados pero cosas como los moviles de los empleados pueden ser mas peligrosos.
+Otra función es tener una red wifi de mi conpañia montada en una dmz del firewall dedicada a los telefonos de empleados (BYOD). Ya que los portatiles se pueden tener controlados pero cosas como los moviles de los empleados pueden ser mas peligrosos.
 
 Entonces aqui es donde entra el RADIUS, que se encarga de validar hasta donde puede llegar un usuario. Bloquea y no permite el paso a zonas indevidas.
 Aunque fisicamente es el mismo cable y la misma antena, pero lógicamente son dos mundos separados.
@@ -96,16 +96,19 @@ El Servidor Radius es:
 ```
 wifi
 |
-Radiua  <--> Relacion de confianza <┐
+Radius  <--> Relacion de confianza <┐
 |                                   |         
 Firewall --- Red interna --- Directorio activo 
 ```
-
+El Radius puede actuar de intermediario entre las maquinas que vengan del wifi y mi servidor de Direcctorio Activo, estos estan conectados entre si mediante una relación de confianza. Funcionamiento:
+Supongamos que el Directorio activo (AD) tiene la IP .100 y el Servidor Radius tiene la IP .200, entonces al AD se le indica la IP del Radius y vicebersa ademas que cada uno indica una password.
+Pero esto no es suficiente ya que alguien puedo suplantar la identidad de el servidor Radius para engañar al AD por lo que necesito una capa de seguridad. Es por eso que ademas cada uno crea un Certificado y lo instalo en el otro. 
 ### -VALIDACIONES
 
 1. **Medio De Acceso:**
 2. **Condiciones:**
 3. **Politicas:**
+
 
 
 
