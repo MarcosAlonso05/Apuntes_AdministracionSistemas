@@ -210,7 +210,7 @@ Desconecta el cable de red o desactiva el adaptador. Inicia sesión con las cred
 <a id="seccion3"></a>
 ## DNS
 
-*Puerto 53*
+*Puerto TCP y UDP 53*
 El DNS es un systema que traduce nombres de dominio a sus direcciones IP correspondientes y viceversa. Su función es hacer posible la navegación por nombres en lugar de por numeros.
 
 **Funcionamiento:**
@@ -534,6 +534,7 @@ https puerto: 443 y encriptado mediante un certificado SSL.
 
 *-¿Si tengo maquina encargada de generar certificados que parte de la estructura sera diferente en mi servidor web y en mis servidor proxi?*
 El certificado maquina(final) porque es propio de cada maquina.
+
 
 
 
