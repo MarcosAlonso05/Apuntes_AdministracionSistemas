@@ -130,8 +130,11 @@ Lo tengo que configurar una primera vez pero luego ya se mantiene. Al igual que 
 ### -VALIDACIONES
 
 1. **Medio De Acceso:**
-2. **Condiciones:**
-3. **Politicas:**
+   Una de las formas que tiene el servidor Radius que el que entra sea correcto es validando el medio por el que accede. Si por ejemplo el usuario esta configurado para entrar con una VPN con una IP 1.1.1.0 si derrepente alguien hace spofin para adivinar la IP y entra por wifi lo puedes configurar para bloquear.
+   
+3. **Condiciones:**
+4. **Politicas:**
+
 
 
 
