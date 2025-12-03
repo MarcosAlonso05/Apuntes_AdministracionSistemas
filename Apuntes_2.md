@@ -130,10 +130,21 @@ Lo tengo que configurar una primera vez pero luego ya se mantiene. Al igual que 
 ### -VALIDACIONES
 
 1. **Medio De Acceso:**
-   Una de las formas que tiene el servidor Radius que el que entra sea correcto es validando el medio por el que accede. Si por ejemplo el usuario esta configurado para entrar con una VPN con una IP 1.1.1.0 si derrepente alguien hace spofin para adivinar la IP y entra por wifi lo puedes configurar para bloquear.
+   Una de las formas que tiene el servidor Radius de verificar que el usuario que entra sea correcto es validando el medio por el que accede. Si por ejemplo el usuario esta configurado para entrar con una VPN con una IP 1.1.1.0 si derrepente alguien hace spofin para adivinar la IP y entra por wifi lo puedes configurar para bloquear.
    
 3. **Condiciones:**
-4. **Politicas:**
+   Luego tenemos unas condiciones que podemos configurar que se cumplan para permitir el paso. Ejemplos:
+   - Rango de Direcciones IP: Se utiliza notación CIDR para agrupar clientes, es decir por ejemplo si el Switch (Cliente Radius) tiene la IP 192.168.1.50, en el servidor configuro el rango 192.168.1.0/24. Esto permite que cualquier switch de esa subred pueda enviar peticiones. Es el protocolo de control de acceso a red basado en puertos.
+   - Medios de transmisión: Si es por wifi, cable etc.
+   - Protocolo de autentificación: (Estándar 802.1x) Es el protocolo de control de acceso a red basado en puertos. Formas de autenticar:
+       - EAP, no requiere de certificado. Usuario + contraseña.
+       - PEAP, certificado + usuario + contraseña
+
+        Si tengo usuarios que no acceptan certificados como una impresora, camaras o equipos antiguos utilizo EAP. Si utilizo PEAP obligatoriamente tengo que instalar el certificado.
+        Tambien se puede usar la Dirección MAC del dispositivo como si fuera el usuario y la contraseña, el Radius mira una lista de "MACs permitidas".
+
+5. **Politicas:**
+
 
 
 
