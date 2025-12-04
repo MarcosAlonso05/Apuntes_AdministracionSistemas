@@ -144,6 +144,49 @@ Lo tengo que configurar una primera vez pero luego ya se mantiene. Al igual que 
         Tambien se puede usar la Dirección MAC del dispositivo como si fuera el usuario y la contraseña, el Radius mira una lista de "MACs permitidas".
 
 5. **Politicas:**
+   En el servidor radius puedo restringir o permitir la posivilidad de autentificarse por grupos (usuarios o maquinas).
+   Puedo restringir el nivel de acceso, por ejemplo puedo hacer que cun usuario del grupo de redes se autentique por medio de un swich a mi servidor radius dandole los permisos que quieras.
+   Aquí tienes la última sección de tus apuntes, dedicada a las Políticas y Autorización. Esta es la parte donde se decide "quién entra y qué puede hacer una vez dentro".
+
+He corregido "red pribada" por VLAN de Cuarentena/Remediación y he estructurado los conceptos de grupos y permisos.
+
+Apuntes: Políticas de Red (Network Policies & Authorization)
+Una vez superada la autenticación (usuario y contraseña correctos), el servidor RADIUS aplica las Políticas para decidir qué nivel de acceso otorgar.
+
+1. Filtrado por Grupos (Directory Groups)
+El RADIUS no trata a todos por igual. Utiliza los grupos del Active Directory para diferenciar usuarios y máquinas.
+
+A. Grupos de Usuarios (User Groups)
+Se define qué grupos de personas tienen permiso para conectarse.
+
+Ejemplo:
+
+Permitir acceso al grupo Domain Users (todos los empleados).
+
+Denegar acceso al grupo Contractors (externos) en la red corporativa principal.
+
+B. Grupos de Máquinas (Machine Groups)
+El RADIUS puede validar el dispositivo en sí mismo, no solo la persona.
+
+En Active Directory, los ordenadores también son objetos con usuario y contraseña (invisible para nosotros).
+
+Política: "Solo permitir la conexión si el dispositivo pertenece al grupo Corporate_Laptops".
+
+Utilidad: Evita que un empleado coja sus credenciales corporativas y las use en su portátil personal (que no es seguro) para entrar a la red interna. Si la máquina no es de la empresa, el RADIUS la rechaza.
+
+2. Niveles de Acceso y Atributos (Authorization)
+Aquí es donde aplicas el ejemplo del grupo de redes. No es solo "entrar o no entrar", sino "¿con qué privilegios entras?".
+El Radius envía instrucciones al Switch/Router mediante atributos:
+Si el usuario pertenece a un grupo permitido, el Radius envía: Access-Accept + Privilege Level.
+
+Tambien puedo crear grupos de maquinas y elegir desde que maquina puede autenticarse o no.
+
+Si un usuario o maquina no cumple los requisitos de seguridad y se quiere conectar, puedo bloquearle completamente o puedo por ejemlo dejarle pasar pero metiendole en una red aislada que simule la mia para ver su comportamiento y aprender de el o sacar evidencias de una falla de seguridad o intento de hakeo.
+
+En resumen un servidor Radius es un primer filtro de acceso a red.
+
+### RED EDUROAM
+
 
 
 
