@@ -157,7 +157,13 @@ Lo tengo que configurar una primera vez pero luego ya se mantiene. Al igual que 
 
    En resumen un servidor Radius es un primer filtro de acceso a red.
 
-### RED EDUROAM
+### -RED EDUROAM
+
+Es un proyecto de universidades, el objetivo era permitir a los usuarios por ejemplo alumnos conectarse a esta red conjunta, independientemente de la universidad en la que estes. Este se escalo a nivel nacional y se acordo que cualquier intitución educacionales o cientificas se puedan unir a esta red.
+
+**Arquiteptura:**
+
+![ej eduroam](recursos/Eduroam.png)
 
 
 
