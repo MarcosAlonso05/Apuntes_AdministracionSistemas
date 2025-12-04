@@ -145,9 +145,7 @@ Lo tengo que configurar una primera vez pero luego ya se mantiene. Al igual que 
 
 5. **Politicas:**
    En el servidor radius puedo restringir o permitir la posivilidad de autentificarse por grupos (usuarios o maquinas).
-   Puedo restringir el nivel de acceso, por ejemplo puedo hacer que cun usuario del grupo de redes se autentique por medio de un swich a mi servidor radius dandole los permisos que quieras.
-   Aquí tienes la última sección de tus apuntes, dedicada a las Políticas y Autorización. Esta es la parte donde se decide "quién entra y qué puede hacer una vez dentro".
-   
+   Puedo restringir el nivel de acceso, por ejemplo puedo hacer que un usuario del grupo de redes se autentique por medio de un swich a mi servidor radius dandole los permisos que quieras.
    El Radius envía instrucciones al Switch/Router mediante atributos:
    Si el usuario pertenece a un grupo permitido, el Radius envía: Access-Accept + Privilege Level.
 
@@ -174,6 +172,7 @@ Ejemplo de un request un alumno de la UAX (usuario: alumno@uax.es) está física
 6. Validación Final (UAX): La petición llega al Radius Interno.Este Radius habla con el AD de la UAX y pregunta: "¿Existe alumno y es esta su contraseña?".
 
 Si el AD verifica que el usuario es correcto devuelve ok y este mensaje hace el mismo camino pero devuelta y el alumno tendra acceso a internet en UEM.
+
 
 
 
