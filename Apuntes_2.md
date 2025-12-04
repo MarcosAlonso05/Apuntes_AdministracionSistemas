@@ -165,6 +165,15 @@ Es un proyecto de universidades, el objetivo era permitir a los usuarios por eje
 
 ![ej eduroam](recursos/Eduroam.png)
 
+Ejemplo de un request un alumno de la UAX (usuario: alumno@uax.es) está físicamente en el campus de la UEM con su portátil.
+1. Conexión Inicial (UEM): El alumno selecciona la red WiFi eduroam. Su portátil envía las credenciales (alumno@uax.es + contraseña) al Punto de Acceso de la UEM. El Punto de Acceso se las pasa al Radius Server local de la UEM.
+2. Detección de Dominio y Proxy (UEM): El Radius de la UEM lee el usuario y ve el dominio @uax.es, como ese usuario no es suyo no puede validarlo en su AD. En lugar de rechazarlo, actúa como Radius Proxy. Reenvía la petición hacia la nube de Eduroam (Internet).
+3. Enrutamiento en la Federación (Internet): La petición llega a los servidores nacionales de Eduroam, estos funcionan como un intercambiador de tráfico. Miran la etiqueta @uax.es y saben a qué dirección IP pública deben enviar esa petición: a la red de la UAX.
+4. Entrada al Perímetro (UAX): La petición llega desde Internet al Radius Externo de la UAX, este servidor actúa de primer filtro y pasa la petición a través del Firewall hacia dentro.
+5. Cruce a la Red Interna (UAX): El Firewall permite el paso del tráfico Radius desde la DMZ hacia la Internal Network, donde están los servidores críticos.
+6. Validación Final (UAX): La petición llega al Radius Interno.Este Radius habla con el AD de la UAX y pregunta: "¿Existe alumno y es esta su contraseña?".
+
+Si el AD verifica que el usuario es correcto devuelve ok y este mensaje hace el mismo camino pero devuelta y el alumno tendra acceso a internet en UEM.
 
 
 
