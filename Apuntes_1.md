@@ -4,14 +4,14 @@
 
 ## ÍNDICE
 
-* [VIRTUALIZACIÓN](#seccion1)
-* [DIRECTORIO ACTIVO](#seccion2)
-* [DNS](#seccion3)
-* [DHCP](#seccion4)
-* [PROXY](#seccion5)
-* [SERVIDOR WEB](#seccion6)
-* [CERTIFICADOS](#seccion7)
-* [PREGUNTAS TIPO EXAMEN](#seccion8)
+- [VIRTUALIZACIÓN](#seccion1)
+- [DIRECTORIO ACTIVO](#seccion2)
+- [DNS](#seccion3)
+- [DHCP](#seccion4)
+- [PROXY](#seccion5)
+- [SERVIDOR WEB](#seccion6)
+- [CERTIFICADOS](#seccion7)
+- [PREGUNTAS TIPO EXAMEN](#seccion8)
 
 ---
 
@@ -20,9 +20,9 @@
 
 Crear una versión virtual de un recurso tecnológico. Las ventajas claves de esto son:
 
-* Ahorro de costes y eficiencia: Permite que un servidor fisico(Host) ejecute multiples maquinas, ahorrando electricidad espacio y dinero.
-* Aislamiento: Cada maquina esta aislada de las otras si una tiene un error no afecta a las otras directamente.
-* Agilidad y pruebas: Las maquinas son faciles y rapidas de crear, al crear una puedos probar un software o configuracion y si algo sale mal no afecta al sistema real.
+- Ahorro de costes y eficiencia: Permite que un servidor fisico(Host) ejecute multiples maquinas, ahorrando electricidad espacio y dinero.
+- Aislamiento: Cada maquina esta aislada de las otras si una tiene un error no afecta a las otras directamente.
+- Agilidad y pruebas: Las maquinas son faciles y rapidas de crear, al crear una puedos probar un software o configuracion y si algo sale mal no afecta al sistema real.
 
 La estructura base de un entorno de virtualizacion es la siguiente:
 
@@ -38,10 +38,10 @@ La estructura base de un entorno de virtualizacion es la siguiente:
 A la hora de crear maquinas virtuales es imprtante tener en cuenta los recursos del HW anfitrión (CPU, RAM, almacenamiento, red...) ya que estos se repartiran entre las maquinas virtuales y el propio anfitrión. Por lo tanto el pone las limitaciones.
 El rendimiento de las maquinas depende entonces de:
 
-* Cantidad de RAM disponibles.
-* Numero de nucleos del procesador.
-* La velocidad de disco.
-* La carga simultanea de las maquinas.  
+- Cantidad de RAM disponibles.
+- Numero de nucleos del procesador.
+- La velocidad de disco.
+- La carga simultanea de las maquinas.  
 
 Esto lleva a otro punto importante. **Cúantas maquinas puedo crear vs. cuantas puedo tener corriendo**.
 
@@ -62,10 +62,10 @@ No se puede saber ya que desconocemos lo que ocupa el sofware de virtualización
 **Modos de la targeta de red**
 La targeta de red virtual puedo operar en varios modos según el nivel de aislamiento o conexión:
 
-* Bidged: Conecta la VM directamente a la red física. Tiene su propia IP en la red local.
-* NAT: La VM comparte la conexión del host, saliendo a Internet a traves de la IP del anfitrión.
-* Host-Only: La VM solo se comunica con el host (no acceso a internet).
-* Internal / Private: Solo se comunica con otras VMs del mismo entorno virtual.
+- Bidged: Conecta la VM directamente a la red física. Tiene su propia IP en la red local.
+- NAT: La VM comparte la conexión del host, saliendo a Internet a traves de la IP del anfitrión.
+- Host-Only: La VM solo se comunica con el host (no acceso a internet).
+- Internal / Private: Solo se comunica con otras VMs del mismo entorno virtual.
 
 &#8203;
 **Conceptos principales**
@@ -86,8 +86,8 @@ Importante, la snapshot se debe hacer con la maquina apagada, ya que puede haber
 
 **-Diferencias entre .ovf y .ova:**
 
-* OVF: Es un conjunto de archivos que describen una maquina virtual. Son mas faciles de editar pero ocupan mas espacio.
-* OVA: Es un único archivo comprimido que contiene todos los componentes del OVF. Es ideal para importar/exportar una VM completa.
+- OVF: Es un conjunto de archivos que describen una maquina virtual. Son mas faciles de editar pero ocupan mas espacio.
+- OVA: Es un único archivo comprimido que contiene todos los componentes del OVF. Es ideal para importar/exportar una VM completa.
 
 ---
 
@@ -109,15 +109,15 @@ Ramas (Subdominio) --> Arbol (Dominio) --> Bosque (Relación de Confianza)
 
 **USUARIOS Y GRUPOS:**
 
-* Usuarios: Estos en el directorio activo representan una identidad digital. Cada usuario tiene:
-  * Nombre de inicio de sesión.
-  * Contraseña.
-  * Atributos personales.
-  * Permisos y políticas aplicadas.
+- Usuarios: Estos en el directorio activo representan una identidad digital. Cada usuario tiene:
+  - Nombre de inicio de sesión.
+  - Contraseña.
+  - Atributos personales.
+  - Permisos y políticas aplicadas.
 
 Los usuarios se autentican mediante Kerberos cuando inician sesión en el dominio.
 
-* Maquinas: Funciona igual que una cuenta de usuario pero esta representa a un equipo.
+- Maquinas: Funciona igual que una cuenta de usuario pero esta representa a un equipo.
 Cada máquina del dominio tiene su propia cuenta en el Directorio Activo. Sirve para que el equipo se autentique contra el dominio y pueda usar recursos compartidos, políticas, etc.
 
 -Diferencias entre usuario y usuario maquina
@@ -129,7 +129,7 @@ Cada máquina del dominio tiene su propia cuenta en el Directorio Activo. Sirve 
 | Inicio de sesión | Sesión interactiva | Sesión del sistema |
 | Propósito | Acceder a recursos, servicios, aplicaciones | Autenticarse en el dominio y aplicar políticas |
 
-* Grupos: Sirven para organizar usuarios o equipos que tienen permisos o funciones similares.
+- Grupos: Sirven para organizar usuarios o equipos que tienen permisos o funciones similares.
 Estos te facilitan la administración de permisos.
 Permiten aplicar politicas GPO (herramientas de Active Directory que permiten gestionar y aplicar configuraciones de forma centralizada) a usuarios y equipos dentro de un dominio.
 Evita tener que configurar permisos uno por uno.
@@ -162,36 +162,36 @@ Cada solicitud de acceso va con fecha y hora para ver el tiempo que tarda. Si ca
 Las GPO permiten que los administradores controlen, configuren y gestionen de forma centralizada el comportamiento de los usuarios y equipos de un dominio.
 Define reglas, configuraciones y restricciones que se aplican automáticamente cuando el usuario o el equipo se conecta al dominio.
 
-* Políticas de usuario:
+- Políticas de usuario:
   Definen qué puede hacer o no un usuario dentro del dominio y cómo se comporta su entorno de trabajo.
   Estas políticas se aplican a las cuentas de usuario, no a las máquinas, y sirven para mantener el control del entorno.
   -Ejemplos comunes:
-  * Restringir el acceso al Panel de control o a Configuración de Windows.
-  * Bloquear el Administrador de tareas o el registro del sistema.
-  * Redirigir carpetas (por ejemplo, que “Documentos” se guarde en un servidor central).
-  * Ejecutar scripts de inicio o cierre de sesión.
-  * Establecer fondos de pantalla corporativos o configuraciones de escritorio.
-  * Ocultar o mostrar unidades de disco (por ejemplo, ocultar C: a los usuarios normales).
+  - Restringir el acceso al Panel de control o a Configuración de Windows.
+  - Bloquear el Administrador de tareas o el registro del sistema.
+  - Redirigir carpetas (por ejemplo, que “Documentos” se guarde en un servidor central).
+  - Ejecutar scripts de inicio o cierre de sesión.
+  - Establecer fondos de pantalla corporativos o configuraciones de escritorio.
+  - Ocultar o mostrar unidades de disco (por ejemplo, ocultar C: a los usuarios normales).
 
-* Políticas de contraseña:
+- Políticas de contraseña:
   Regulan cómo deben ser las contraseñas de los usuarios del dominio para mejorar la seguridad.
   -Parámetros más comunes:
-  * Longitud mínima: número mínimo de caracteres.
-  * Complejidad: si debe incluir mayúsculas, minúsculas, números y símbolos.
-  * Caducidad: cada cuántos días el usuario debe cambiarla.
-  * Historial: evita reutilizar contraseñas anteriores.
-  * Bloqueo de cuenta: número de intentos fallidos antes de bloquear temporalmente al usuario.
-  * Tiempo de bloqueo: cuánto tiempo debe esperar el usuario si su cuenta se bloquea.
+  - Longitud mínima: número mínimo de caracteres.
+  - Complejidad: si debe incluir mayúsculas, minúsculas, números y símbolos.
+  - Caducidad: cada cuántos días el usuario debe cambiarla.
+  - Historial: evita reutilizar contraseñas anteriores.
+  - Bloqueo de cuenta: número de intentos fallidos antes de bloquear temporalmente al usuario.
+  - Tiempo de bloqueo: cuánto tiempo debe esperar el usuario si su cuenta se bloquea.
 
-* Políticas de seguridad:
+- Políticas de seguridad:
   Afectan tanto a usuarios como a equipos, y regulan aspectos de acceso, permisos y seguridad del sistema operativo. Estas políticas garantizan que todos los equipos cumplan con las normas de seguridad establecidas por la organización.
   -Ejemplos:
-  * Qué usuarios pueden apagar o reiniciar el equipo.
-  * Quién puede instalar o desinstalar software.
-  * Qué recursos o carpetas están protegidos o accesibles.
-  * Si se permite conexión por escritorio remoto (RDP).
-  * Configuración de firewall, actualizaciones automáticas, bloqueo de puertos, etc.
-  * Reglas de auditoría (registrar accesos, intentos de login, etc.).
+  - Qué usuarios pueden apagar o reiniciar el equipo.
+  - Quién puede instalar o desinstalar software.
+  - Qué recursos o carpetas están protegidos o accesibles.
+  - Si se permite conexión por escritorio remoto (RDP).
+  - Configuración de firewall, actualizaciones automáticas, bloqueo de puertos, etc.
+  - Reglas de auditoría (registrar accesos, intentos de login, etc.).
 
 En el Directorio Activo, los usuarios y equipos se pueden agrupar (unidades organizativas), esto permite ordenar y aplicar políticas específicas sin afectar a todo el dominio.
 
@@ -224,11 +224,11 @@ Cuando un equipo quiere acceder a una web o servidor, se sigue un proceso de res
 
 **Tipos de registros:**
 
-* A Record (Address Record): Asocia un nombre de dominio con una dirección IPv4.
+- A Record (Address Record): Asocia un nombre de dominio con una dirección IPv4.
   -Ej: `www.ejemplo.com  ->  192.168.1.10`
-* AAAA Record (Quad-A Record): Asocia el nombre de dominio con una dirección IPv6.
+- AAAA Record (Quad-A Record): Asocia el nombre de dominio con una dirección IPv6.
   -Ej: `www.ejemplo.com  ->  2001:0db8:85a3::8a2e:0370:7334`
-* PTR Record (Pointer Record): Asocia una dirección IP con un nombre de dominio. Se usa para resolución inversa (reverse lookup).
+- PTR Record (Pointer Record): Asocia una dirección IP con un nombre de dominio. Se usa para resolución inversa (reverse lookup).
   -Ej: `192.168.1.10 -> www.ejemplo.com`
 
 **Ataques relacionados con DNS:**
@@ -267,15 +267,15 @@ Su función principal es automatizar el asignar direcciones, en lugar de que un 
 
 **Tipos de asignación:**
 
-* Estática: IP configurada directamente en el equipo. No pregunta al servidor DHCP, se autoconfigura.
+- Estática: IP configurada directamente en el equipo. No pregunta al servidor DHCP, se autoconfigura.
   -Problema: Si te mueves a otra red con otro rango, no tendrás conexión.
-* Dinámica: IP asignada automáticamente del rango DHCP.
+- Dinámica: IP asignada automáticamente del rango DHCP.
   La dirección tiene un tiempo de concesión (Lease Time), cuando el tiempo expira, la IP vuelve a estar disponible.
-* Híbrida: Combinación de las anteriores (rango dinámico + reservas estáticas).
-* Estatica por MAC: IP se asigna desde el servidor DHCP, pero está reservada para una dirección MAC concreta.
+- Híbrida: Combinación de las anteriores (rango dinámico + reservas estáticas).
+- Estatica por MAC: IP se asigna desde el servidor DHCP, pero está reservada para una dirección MAC concreta.
   El cliente siempre recibe la misma IP, porque el servidor la tiene guardada para él.
   Si mueves el equipo a otra red con otro servidor DHCP, no seguirá funcionando.
-* Dinamica por MAC: El servidor sigue usando DHCP, pero identifica al cliente por su MAC. Si la máquina se conecta dentro de la misma red recibe una IP dinamicamente y siempre mantendra la misma IP cada vez que se vuelva a conectar.
+- Dinamica por MAC: El servidor sigue usando DHCP, pero identifica al cliente por su MAC. Si la máquina se conecta dentro de la misma red recibe una IP dinamicamente y siempre mantendra la misma IP cada vez que se vuelva a conectar.
  Asi puede conectarse desde otro lugar sin tener problemas.
   Ventaja: permite tener una IP dentro de la red corporativa para localizar dispositivos en especifico, pero adaptable fuera de ella.
 
@@ -381,9 +381,9 @@ Se puede montar en Windows usando IIS (Internet Information Services) o en Linux
 
 **Partes:**
 
-* Código: html, php, perl ...
-* Entorno o framework: Herramientas que facilitan la creación y gestión de interfaces o lógica de aplicación. FlutterFlow, Dart, Node...
-* Base de datos (opcional): Sistema para almacenar información dinámica. Firebase, MySQL, Oracle...
+- Código: html, php, perl ...
+- Entorno o framework: Herramientas que facilitan la creación y gestión de interfaces o lógica de aplicación. FlutterFlow, Dart, Node...
+- Base de datos (opcional): Sistema para almacenar información dinámica. Firebase, MySQL, Oracle...
 
 **Ubicación:**
 Dependiendo de las necesidades se encontrara en una parte o en otra.
@@ -434,7 +434,7 @@ ROOT e INTERMEDIATE son los comunes y el certificado maquina es individual de ca
 
 **Tipos de certificados:**
 
-* **Certificado Autofirmado:**
+- **Certificado Autofirmado:**
   Estos son emitidos por uno mismo sin pasar por una CA oficial.
   Se suenlen usar en redes internas, en las que el administrador genera su propio certificado y lo instala manualmente. Estos no tienen Root.
 &#8203;
@@ -447,24 +447,24 @@ ROOT e INTERMEDIATE son los comunes y el certificado maquina es individual de ca
 &#8203;
   Ahora por seguridad los nabegadores modernos no se traga los certificados autofirmados y no te deja acceder.
 &#8203;
-* **Certificado Oficiales:**
+- **Certificado Oficiales:**
   Estos estan emitidos por unas CA oficiales conocidas a nivel mundial (DigiCert, Sectigo, GlobalSign, Let’s Encrypt, etc.).
   Son verificados y reconocidos automáticamente por los navegadores.
   Para solicitarlos, se genera un CSR, es un documento de texto generado en la maquina.
   -CSR Contiene:
-  * Commond Name (dominio o IP).
-  * Organization.
-  * Organizational Unit.
-  * Country.
-  * State.
-  * Key Size (tamaño de clave, normalmente 2048 bits).
-  * Información de contacto.
+  - Commond Name (dominio o IP).
+  - Organization.
+  - Organizational Unit.
+  - Country.
+  - State.
+  - Key Size (tamaño de clave, normalmente 2048 bits).
+  - Información de contacto.
 &#8203;
 
   La CA me comprueba que los datos son correctos (en especial el common name). Y esta emite el certificado que sera:
-  * Root: CA.
-  * Intermediates: Resto de certificadoras oficialeas.
-  * Final: Certificado para la web que se cetifica
+  - Root: CA.
+  - Intermediates: Resto de certificadoras oficialeas.
+  - Final: Certificado para la web que se cetifica
   Ej: Root CA: DigiCert -> Intermediate CA: GlobalSign -> Server Certificate: `www.miempresa.com`.
 
 ---
@@ -534,6 +534,7 @@ https puerto: 443 y encriptado mediante un certificado SSL.
 
 *-¿Si tengo maquina encargada de generar certificados que parte de la estructura sera diferente en mi servidor web y en mis servidor proxi?*
 El certificado maquina(final) porque es propio de cada maquina.
+
 
 
 
